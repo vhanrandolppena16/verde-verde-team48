@@ -22,16 +22,28 @@ import { getDatabase } from "firebase/database";
     // };
 
 // Firebase Project: team48-verde
-const firebaseConfig = {
-    apiKey: "AIzaSyBpDp4pPn9ucNzO9wmYPhNyb0_qjiZU3AM",
-    authDomain: "team48-verde-c2395.firebaseapp.com",
-    databaseURL: "https://team48-verde-c2395-default-rtdb.asia-southeast1.firebasedatabase.app",
-    projectId: "team48-verde-c2395",
-    storageBucket: "team48-verde-c2395.firebasestorage.app",
-    messagingSenderId: "256046721455",
-    appId: "1:256046721455:web:64a9a42b96512639f7275a"
-  };
+  const firebaseConfig = {
+      apiKey: "AIzaSyBpDp4pPn9ucNzO9wmYPhNyb0_qjiZU3AM",
+      authDomain: "team48-verde-c2395.firebaseapp.com",
+      databaseURL: "https://team48-verde-c2395-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "team48-verde-c2395",
+      storageBucket: "team48-verde-c2395.firebasestorage.app",
+      messagingSenderId: "256046721455",
+      appId: "1:256046721455:web:64a9a42b96512639f7275a"
+    };
 
+// Firebase Project: manual-database
+  // const firebaseConfig = {
+  //   apiKey: "AIzaSyDetiOAy6PqK1G7Elnp2zX7Poyl9x4lsYs",
+  //   authDomain: "trial-verde-firestore-realtime.firebaseapp.com",
+  //   databaseURL: "https://trial-verde-firestore-realtime-default-rtdb.firebaseio.com",
+  //   projectId: "trial-verde-firestore-realtime",
+  //   storageBucket: "trial-verde-firestore-realtime.firebasestorage.app",
+  //   messagingSenderId: "247643878009",
+  //   appId: "1:247643878009:web:bc8d04fd5c2d9c13a21aa8",
+  //   measurementId: "G-DV4ZVDKSCS"
+  // };
+  
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const authentication = getAuth(app);

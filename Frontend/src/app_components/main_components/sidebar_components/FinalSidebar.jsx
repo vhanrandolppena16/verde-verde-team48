@@ -22,6 +22,7 @@
 
 const Sidebar = ({ setNavigationText, collapsed, setCollapsed }) => {
   const navigate = useNavigate();
+//const [refreshTrigger, setRefreshTrigger] = useState(0);
 
   const handleLogout = () => {
     const confirmed = window.confirm("Are you sure you want to log out?");  
@@ -53,6 +54,7 @@ const Sidebar = ({ setNavigationText, collapsed, setCollapsed }) => {
     if (currentRoute === item.route) {
       // Reload the page
       window.location.reload();
+      //     setRefreshTrigger(prev => prev + 1); // Custom refresh signal
     } else {
       navigate(item.route);
     }

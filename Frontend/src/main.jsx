@@ -10,15 +10,15 @@ import App from './App.jsx'
 // Import VideoProvider for video sharing purpose 
   import { VideoProvider } from './app_components/main_components/content_components/LiveStream/livestream_components/VideoContext.jsx'; // 👈 import this
 // Import Alert Context for StatusModal
-  // import { AlertProvider  } from './app_components/main_components/content_components/SensorLogs/logs_components/AlertContext.jsx';
+  import { AlertProvider  } from './app_components/main_components/content_components/SensorLogs/log_components/AlertContext.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>     {/**Allows application navigation within the system */}
       <VideoProvider>   {/**Allows access for video sharing purposes */}
-        {/* <AlertProvider>    */}
+        <AlertProvider>   
           <App /> 
-        {/* </AlertProvider> */}
+        </AlertProvider>
       </VideoProvider>
     </BrowserRouter>
   </StrictMode>
