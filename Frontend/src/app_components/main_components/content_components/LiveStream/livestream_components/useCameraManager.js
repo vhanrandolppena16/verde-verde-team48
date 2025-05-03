@@ -105,7 +105,7 @@ const useCameraManager = (videoRef) => {
       formData.append("video", file);
   
       try {
-        const res = await fetch("http://localhost:5000/upload", {
+        const res = await fetch("http://192.168.55.118:5001/upload", {
           method: "POST",
           body: formData,
         });
