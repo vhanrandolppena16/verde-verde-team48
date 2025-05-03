@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useAlert } from '../SensorLogs/logs_components/AlertContext';
-import socket from '../../socket'; // ✅ Import socket
+import { useAlert } from '../SensorLogs/log_components/AlertContext';
+import socket from '../../../../socket'; // ✅ Import socket
 
 const initialRelays = [
   { name: 'Pump 1 - pH Up', icon: '🧪⬆️', state: false },
@@ -91,7 +91,7 @@ const Control = () => {
   return (
     <div className="bg-white border rounded-xl shadow p-6 mt-4 w-full h-full flex flex-col">
       <h2 className="text-2xl font-bold text-blue-700 mb-6">🛠️ Device Control</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full h-full overflow-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 w-full h-full overflow-auto">
         {relays.map((relay, index) => (
           <div
             key={index}

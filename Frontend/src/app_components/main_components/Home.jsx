@@ -8,6 +8,7 @@
   import Header from "./header_components/FinalHeader";
   import Sidebar from "./sidebar_components/FinalSidebar";
   import ContentArea from "./content_components/FinalContentArea";
+  import AlertModal from "./content_components/SensorLogs/AlertModal";
 
 function Home() {
   const location = useLocation(); // Get the current URL path
@@ -70,6 +71,7 @@ function Home() {
        * as it also adjusts to the current area available
       */}
       <ContentArea collapsed={collapsed} />
+      <AlertModal/>
       
     </>
   );

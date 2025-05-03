@@ -17,7 +17,7 @@
     import Dataset from "./app_components/main_components/content_components/Data/Dataset";
     import LiveStreamPage from "./app_components/main_components/content_components/LiveStream/LiveStream";
     import Logs from "./app_components/main_components/content_components/SensorLogs/SensorLogs";
-    import Control from "./app_components/main_components/content_components/Env Parameter Control/Control";
+    import Control from "./app_components/main_components/content_components/Env Parameter Control/Control2";
     // import AlertModal from "./app_components/home_components/content_components/SensorLogs/AlertModal";
 
 // Main App component
