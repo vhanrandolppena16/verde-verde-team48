@@ -105,7 +105,7 @@ const useCameraManager = (videoRef) => {
       formData.append("video", file);
   
       try {
-        const res = await fetch("https://78c5-61-9-110-207.ngrok-free.app/upload", {
+        const res = await fetch("http://localhost:5001/upload", {
           method: "POST",
           body: formData,
         });
