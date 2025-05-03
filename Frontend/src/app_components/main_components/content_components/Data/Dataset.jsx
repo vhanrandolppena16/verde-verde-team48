@@ -2,16 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { ref, onValue } from 'firebase/database';
 import { sensor_db } from "../../../../../firebase_database/firebase";
 import getGrowthStage from "../Dashboard/dashboard_components/getGrowthStage";
+
 // Setting of standard growth duration of hydroponic plant in days
 const GROWTH_DURATION_DAYS = 30;
-
-// Conversion from Growth Days to Growth Stage
-// Based on Describing Lettuce Growth Using Morphological Features Combined with Nonlinear Models
-// const getGrowthStage = (days) => {
-//   if (days <= 5.5) return "Initial (Germination)";
-//   if (days <= 26.2) return "Rapid Growth";
-//   return "Senescent (May Harvest)";
-// };
 
 const SensorTable = () => {
   // State to store sensor readings
@@ -29,7 +22,7 @@ const SensorTable = () => {
   useEffect(() => {
     document.title = "Dataset | Verde";     // Changing the name of the tab
     
-    const sensorRef = ref(sensor_db, 'readings');
+    const sensorRef = ref(sensor_db, 'predictions_3');
     const unsubscribe = onValue(sensorRef, (snapshot) => {
       if (snapshot.exists()) {
         const rawData = snapshot.val();

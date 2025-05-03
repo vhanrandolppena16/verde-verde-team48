@@ -1,4 +1,4 @@
-// components/CameraToggleButton.jsx
+// livestream_components/CameraToggleButton.jsx
 
 import React from 'react';
 import { CameraOff, Camera } from 'lucide-react';

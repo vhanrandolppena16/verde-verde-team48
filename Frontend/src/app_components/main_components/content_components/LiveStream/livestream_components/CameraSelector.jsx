@@ -1,4 +1,4 @@
-// components/CameraSelector.jsx
+// livestream_components/CameraSelector.jsx
 
 import React from 'react';
 

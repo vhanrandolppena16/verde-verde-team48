@@ -30,7 +30,7 @@ const Dashboard = () => {
     
     // States constant reference for sensor readings location
     // whereas it is stored in sensor_db within the readings node
-    const readingsRef = ref(sensor_db, 'readings'); // change it back to readings
+    const readingsRef = ref(sensor_db, 'predictions_3'); // change it back to readings
 
     // Real-time Listener for Sensor Readings
     onValue(readingsRef, (snapshot) => {

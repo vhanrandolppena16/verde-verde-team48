@@ -4,6 +4,7 @@ import React, { useRef, useEffect, useContext } from 'react';
 import useCameraManager from './livestream_components/useCameraManager';
 import CameraToggleButton from './livestream_components/CameraToggleButton';
 import CameraSelector from './livestream_components/CameraSelector';
+import RecordButton from './livestream_components/RecordButton';
 import { VideoContext } from './livestream_components/VideoContext';
 
 const LiveStreamPage = ({ showControls = true }) => {
@@ -17,6 +18,9 @@ const LiveStreamPage = ({ showControls = true }) => {
     toggleCamera,
     stopCamera,
     startCamera,
+    startRecording, 
+    stopRecording, 
+    isRecording
   } = useCameraManager(videoRef);
 
   useEffect(() => {
@@ -46,6 +50,12 @@ const LiveStreamPage = ({ showControls = true }) => {
         {/* 🎛 Floating Controls (optional) */}
         {showControls && (
           <div className="absolute top-3 right-3 flex items-center gap-2 bg-white/90 backdrop-blur-sm px-3 py-2 rounded-lg shadow-md">
+            {isRecording && (
+            <div className="flex items-center gap-2 px-2 py-1 rounded bg-red-100 text-red-700 text-sm animate-pulse">
+                <div className="w-3 h-3 bg-red-600 rounded-full" />
+                <span>Recording...</span>
+              </div>
+            )}
             <CameraSelector
               devices={devices}
               selectedDeviceId={selectedDeviceId}
@@ -58,6 +68,7 @@ const LiveStreamPage = ({ showControls = true }) => {
               }}
             />
             <CameraToggleButton isCameraOn={isCameraOn} toggleCamera={toggleCamera} />
+            <RecordButton isRecording={isRecording} startRecording={startRecording} stopRecording={stopRecording} />
           </div>
         )}
       </div>

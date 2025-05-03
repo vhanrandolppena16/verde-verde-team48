@@ -33,7 +33,7 @@ const SensorGraph = () => {
     document.title = "Analytics | Verde";     // Changing the name of the tab
     
     // Reference to 'readings' in Firebase
-    const sensorRef = ref(sensor_db, "readings");
+    const sensorRef = ref(sensor_db, "predictions_3");
 
     const unsubscribe = onValue(sensorRef, (snapshot) => {
       if (snapshot.exists()) {
