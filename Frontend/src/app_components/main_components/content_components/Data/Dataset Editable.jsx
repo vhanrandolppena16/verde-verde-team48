@@ -9,7 +9,7 @@ const GROWTH_DURATION_DAYS = 30;
 const SensorTable = () => {
   // State to store sensor readings
   const [sensorData, setSensorData] = useState([]);
-  const [startDate, setStartDate] = useState(null);
+  const [startDate, setStartDate] = useState(null)  
 
   // Manual reset with specific known date = specific day #
   const [adjustDate, setAdjustDate] = useState(() => {
@@ -68,6 +68,12 @@ const SensorTable = () => {
   // Toggle sort direction
   const toggleSort = () => setSortAsc((prev) => !prev);
 
+  const handleResetStartDate = () => {
+    const selectedDate = new Date(newPhaseDate);
+    localStorage.setItem('plantStartDate', selectedDate.toISOString());
+    setStartDate(selectedDate);
+  };
+
   return (
     <div className="w-full h-[90%] p-6 bg-emerald-200 mt-15 rounded-[30px]">
       {/* Header: growth start controls */}
@@ -115,11 +121,7 @@ const SensorTable = () => {
             />
             <button
               className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-[30px] shadow"
-              onClick={() => {
-                const selectedDate = new Date(newPhaseDate);
-                localStorage.setItem('plantStartDate', selectedDate.toISOString());
-                setStartDate(selectedDate);
-              }}
+              onClick={() => {handleResetStartDate}}
             >
               Reset Growth Start
             </button>
@@ -151,22 +153,17 @@ const SensorTable = () => {
           </thead>
           <tbody>
             {sensorData.map((entry) => {
-                const start = new Date(startDate);
-                start.setHours(0, 0, 0, 0);
-              
-                const entryDate = new Date(entry.timestampObj);
-                entryDate.setHours(0, 0, 0, 0);
-              
-                const dayNum = Math.floor((entryDate - start) / (1000 * 60 * 60 * 24));
-                
-              return (
+                const dayNum = Math.floor(
+                    (entry.timestampObj - startDate) / (1000 * 60 * 60 * 24)
+                );
+                return (
                 <tr key={entry.id} className="border-t">
                   <td className="py-2 px-4">{entry.timestamp}</td>
                   <td className="py-2 px-4">{entry.temperature}</td>
                   <td className="py-2 px-4">{entry.humidity}</td>
                   <td className="py-2 px-4">{entry.ph}</td>
                   <td className="py-2 px-4">{entry.tds}</td>
-                  <td className="py-2 px-4">{dayNum >= 0 ? dayNum + 1 : 1}</td>
+                  <td className="py-2 px-4">{dayNum >= 0 ? dayNum : 1}</td>
                   <td className="py-2 px-4">{getGrowthStage(dayNum)}</td>
                   <td className="py-2 px-4">{entry.predicted_days}</td>
                   <td className="py-2 px-4">{getGrowthStage(entry.predicted_days)}</td>
