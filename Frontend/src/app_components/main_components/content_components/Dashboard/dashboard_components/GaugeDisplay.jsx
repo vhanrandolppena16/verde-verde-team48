@@ -52,7 +52,7 @@ const SensorReadings = ({ temperature, humidity, pH, tds }) => {
       <Gauge
         name="Total Dissolved Solids"
         min={0}
-        max={2000}
+        max={3000}
         value={tds}
         unit="ppm"
         customRanges={[
