@@ -14,7 +14,7 @@
     import Home from "./app_components/main_components/Home";                           
     import Dashboard from "./app_components/main_components/content_components/Dashboard/Dashboard";
     import SensorGraph from "./app_components/main_components/content_components/Data Analytics/Analytics";
-    import Dataset from "./app_components/main_components/content_components/Data/Dataset";
+    import Dataset from "./app_components/main_components/content_components/Data/Dataset ";
     import LiveStreamPage from "./app_components/main_components/content_components/LiveStream/LiveStream";
     import Logs from "./app_components/main_components/content_components/SensorLogs/SensorLogs";
     import Control from "./app_components/main_components/content_components/Env Parameter Control/Control2";
@@ -44,6 +44,7 @@ function App() {
           <Route path='/logs' element={<Logs />}/>                  {/*Displays the occurence of alerts, higher or lower than threshold */}
           <Route path='/livestream' element={<LiveStreamPage />}/>  {/* Displays the real-time monitoring of the plants*/}
           <Route path='/logout'/>                                   {/* Allows the user to logout */}
+          
         </Route>
       </Routes>
 

@@ -10,10 +10,12 @@ const SensorTable = () => {
   // State to store sensor readings
   const [sensorData, setSensorData] = useState([]);
   // State for tracking the plant's growth start date
-  const [startDate, setStartDate] = useState(() => {
-    const saved = localStorage.getItem('plantStartDate');
-    return saved ? new Date(saved) : new Date();
-  });
+  // const [startDate, setStartDate] = useState(() => {
+  //   const saved = localStorage.getItem('plantStartDate');
+  //   return saved ? new Date(saved) : new Date();
+  // });
+  const [startDate, setStartDate] = useState(null);
+
 
   // State to toggle sort (false = newest first)
   const [sortAsc, setSortAsc] = useState(false); 
@@ -39,6 +41,15 @@ const SensorTable = () => {
             ? a.timestampObj - b.timestampObj
             : b.timestampObj - a.timestampObj
         );
+
+        // Automatically set the startDate if not already set
+        if (!localStorage.getItem('plantStartDate') && sortedData.length > 0) {
+          const firstTimestamp = new Date(sortedData[sortedData.length - 1].timestamp); // oldest entry
+          localStorage.setItem('plantStartDate', firstTimestamp.toISOString());
+          setStartDate(firstTimestamp);
+        } else if (!startDate) {
+          setStartDate(new Date(localStorage.getItem('plantStartDate')));
+        }
 
         setSensorData(sortedData);
       } else {
