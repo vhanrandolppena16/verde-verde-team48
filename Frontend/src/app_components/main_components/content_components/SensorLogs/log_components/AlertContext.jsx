@@ -13,7 +13,7 @@ const THRESHOLDS = {
   temperature: { min: 18, max: 30 },
   humidity: { min: 40, max: 80 },
   ph: { min: 5, max: 7.5 },
-  tds: { min: 500, max: 1800 },
+  tds: { min: 500, max: 1500 },
 };
 
 // AlertProvider wraps the app to monitor sensor data
