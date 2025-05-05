@@ -100,7 +100,10 @@ export const AlertProvider = ({ children }) => {
 
   // Live Firebase subscription (runs once)
   useEffect(() => {
-    const sensorRef = ref(sensor_db, "readings");
+    const sensorRef = ref(sensor_db, "sensor_logs");
+// 
+    // const sensorRef = ref(sensor_db, "control_logging");
+
     const unsubscribe = onValue(sensorRef, (snapshot) => {
       const data = snapshot.val();
       if (data) {
