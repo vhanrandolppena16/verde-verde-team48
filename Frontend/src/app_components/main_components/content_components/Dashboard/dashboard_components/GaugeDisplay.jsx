@@ -59,7 +59,7 @@ const SensorReadings = ({ temperature, humidity, pH, tds }) => {
           { stop: 0, color: "blue" },
           { stop: 500, color: "green" },
           { stop: 1800, color: "orange" },
-          { stop: 2000, color: "red" },
+          { stop: 3000, color: "red" },
         ]}
       />
     </div>
