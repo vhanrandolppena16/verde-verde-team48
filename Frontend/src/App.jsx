@@ -14,7 +14,7 @@
     import Home from "./app_components/main_components/Home";                           
     import Dashboard from "./app_components/main_components/content_components/Dashboard/Dashboard";
     import SensorGraph from "./app_components/main_components/content_components/Data Analytics/Analytics";
-    import Dataset from "./app_components/main_components/content_components/Data/Dataset";
+    import Dataset from "./app_components/main_components/content_components/Data/Dataset Editable";
     import LiveStreamPage from "./app_components/main_components/content_components/LiveStream/LiveStream";
     import Logs from "./app_components/main_components/content_components/SensorLogs/SensorLogs";
     import Control from "./app_components/main_components/content_components/Env Parameter Control/Control2";
